@@ -7,6 +7,7 @@ import com.wwj.finance.service.NewsConfigService;
 import com.wwj.finance.vo.NewsConfigVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,7 +39,7 @@ public class NewsConfigController {
      */
     @RequestMapping(value="/add",method= RequestMethod.POST)
     @ResponseBody
-    public String add(NewsConfigVO newsConfigVO) {
+    public String add(@RequestBody NewsConfigVO newsConfigVO) {
         Result result = newsConfigService.add(newsConfigVO);
         return new Gson().toJson(result);
     }
@@ -49,7 +50,7 @@ public class NewsConfigController {
      */
     @RequestMapping(value="/getConfigById",method= RequestMethod.POST)
     @ResponseBody
-    public String getConfigById(NewsConfigVO newsConfigVO) {
+    public String getConfigById(@RequestBody NewsConfigVO newsConfigVO) {
         Result result = newsConfigService.getConfigById(newsConfigVO);
         return new Gson().toJson(result);
     }
@@ -60,7 +61,7 @@ public class NewsConfigController {
      */
     @RequestMapping(value="/getConfigByName",method= RequestMethod.POST)
     @ResponseBody
-    public String getConfigByName(NewsConfigVO newsConfigVO) {
+    public String getConfigByName(@RequestBody NewsConfigVO newsConfigVO) {
         Result result = newsConfigService.getConfigByName(newsConfigVO);
         return new Gson().toJson(result);
     }
@@ -71,7 +72,7 @@ public class NewsConfigController {
      */
     @RequestMapping(value="/getConfigByAllow",method= RequestMethod.POST)
     @ResponseBody
-    public String getConfigByAllow(NewsConfigVO newsConfigVO) {
+    public String getConfigByAllow(@RequestBody NewsConfigVO newsConfigVO) {
         Result result = newsConfigService.getConfigByAllow(newsConfigVO);
         return new Gson().toJson(result);
     }
@@ -82,7 +83,7 @@ public class NewsConfigController {
      */
     @RequestMapping(value="/updateAllow",method= RequestMethod.POST)
     @ResponseBody
-    public String updateAllow(NewsConfigVO newsConfigVO) {
+    public String updateAllow(@RequestBody NewsConfigVO newsConfigVO) {
         Result result = newsConfigService.updateAllow(newsConfigVO);
         return new Gson().toJson(result);
     }

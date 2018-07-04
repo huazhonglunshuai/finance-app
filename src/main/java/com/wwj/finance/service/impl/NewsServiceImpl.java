@@ -2,10 +2,7 @@ package com.wwj.finance.service.impl;
 
 import com.google.gson.Gson;
 import com.wwj.finance.mapper.NewsFinanceDateMapper;
-import com.wwj.finance.pojo.NewsFinanceDTO;
-import com.wwj.finance.pojo.NewsFinanceDate;
-import com.wwj.finance.pojo.NewsFinanceDateDTO;
-import com.wwj.finance.pojo.NewsFinanceResultDTO;
+import com.wwj.finance.pojo.*;
 import com.wwj.finance.service.NewsService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +15,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -55,9 +53,8 @@ public class NewsServiceImpl implements NewsService {
 
 	@Override
 	public int deleteNews() {
-//		int count = NewsFinanceDateDao.deleteNews();
-//		return count;
-		return 0;
+		int count = newsFinanceDateMapper.deleteByBeforeDate(3);
+		return count;
 	}
 
 	// 得到财经头条

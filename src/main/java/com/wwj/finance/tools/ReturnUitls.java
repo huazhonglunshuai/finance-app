@@ -16,6 +16,7 @@ public class ReturnUitls {
         if(null != list && list.size() > 0){
             result.setCode(CodeEnum.SUCCESS.getValue());
             result.setData(list);
+            result.setTotal(list.size());
         }else {
             result.setCode(CodeEnum.NULL_DATA.getValue());
         }
@@ -29,6 +30,7 @@ public class ReturnUitls {
         if(null != t){
             result.setCode(CodeEnum.SUCCESS.getValue());
             result.setData(t);
+            result.setTotal(1);
         }else {
             result.setCode(CodeEnum.NULL_DATA.getValue());
         }
@@ -42,6 +44,7 @@ public class ReturnUitls {
         if(count > 0){
             result.setCode(CodeEnum.SUCCESS.getValue());
             result.setData(t);
+            result.setTotal(1);
         }else {
             result.setCode(CodeEnum.ADD_FAIL.getValue());
         }

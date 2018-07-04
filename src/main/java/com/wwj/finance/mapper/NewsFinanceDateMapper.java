@@ -27,4 +27,6 @@ public interface NewsFinanceDateMapper {
     int updateByPrimaryKeySelective(NewsFinanceDate record);
 
     int updateByPrimaryKey(NewsFinanceDate record);
+
+    int deleteByBeforeDate(int i);
 }

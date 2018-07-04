@@ -3,6 +3,7 @@ package com.wwj.finance.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.google.gson.Gson;
+import com.wwj.finance.entry.PageReq;
 import com.wwj.finance.entry.Result;
 import com.wwj.finance.mapper.NewsFinanceDateMapper;
 import com.wwj.finance.pojo.NewsFinanceDate;
@@ -23,19 +24,19 @@ public class FinanceServiceImpl implements FinanceService {
     private NewsFinanceDateMapper newsFinanceDateMapper;
 
     @Override
-    public Result getFinanceData(Integer page, Integer rows) {
+    public Result getFinanceData(PageReq page) {
 
-        if(null == page){
-            page = 1;
+        if(null == page.getPage()){
+            page.setPage(1);
         }
-        if(null == rows){
-            rows = 5;
+        if(null == page.getRows()){
+            page.setRows(5);
         }
 
         Result result = new Result();
 
         //分页查询
-        PageHelper.startPage(page, rows);
+        PageHelper.startPage(page.getPage(), page.getRows());
         NewsFinanceDateExample example = new NewsFinanceDateExample();
         NewsFinanceDateExample.Criteria criteria = example.createCriteria();
         criteria.andUniquekeyIsNotNull();
