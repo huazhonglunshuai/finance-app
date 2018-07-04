@@ -119,7 +119,7 @@
     </delete>
 
     <insert id="insert" parameterType="com.wwj.finance.pojo.NewsFinanceDate" >
-        insert into news$finance_date (uniquekey, title, date, 
+        insert ignore into news$finance_date (uniquekey, title, date,
             category, author_name, context, 
             thumbnail_pic_s, thumbnail_pic_s02, thumbnail_pic_s03, 
             status)
@@ -130,7 +130,7 @@
     </insert>
 
     <insert id="insertSelective" parameterType="com.wwj.finance.pojo.NewsFinanceDate" >
-        insert into news$finance_date
+        insert ignore into news$finance_date
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="uniquekey != null" >
                 uniquekey,

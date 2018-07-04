@@ -9,13 +9,14 @@
 
     <context:component-scan base-package="com.wwj.finance.controller" />
 
-    <!--<mvc:annotation-driven />-->
+    <mvc:annotation-driven />
 
-    <!--<mvc:default-servlet-handler/>-->
+    <mvc:default-servlet-handler/>
 
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/news/config/*"/>
             <bean class="com.wwj.finance.interceptor.ConfigInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
