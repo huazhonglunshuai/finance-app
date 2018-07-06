@@ -13,12 +13,12 @@
 
     <mvc:default-servlet-handler/>
 
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <mvc:exclude-mapping path="/news/config/*"/>
-            <bean class="com.wwj.finance.interceptor.ConfigInterceptor"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<mvc:exclude-mapping path="/news/config/*"/>-->
+            <!--<bean class="com.wwj.finance.interceptor.ConfigInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 
 </beans>

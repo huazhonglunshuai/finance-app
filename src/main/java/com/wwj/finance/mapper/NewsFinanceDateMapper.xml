@@ -115,7 +115,7 @@
     </delete>
 
     <delete id="deleteByBeforeDate" parameterType="java.lang.Integer" >
-        DELETE from `ddy-real`.`news$finance_date` where date &lt;=  DATE_SUB(NOW(),INTERVAL #{date} DAY)
+        DELETE from `news$finance_date` where date &lt;=  DATE_SUB(NOW(),INTERVAL #{date} DAY)
     </delete>
 
     <insert id="insert" parameterType="com.wwj.finance.pojo.NewsFinanceDate" >

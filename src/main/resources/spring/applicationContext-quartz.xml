@@ -54,7 +54,7 @@
         class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
         <property name="jobDetail" ref="myJobDetail2" />  
         <!--每天21点0分执行  -->
-        <property name="cronExpression" value="0 0 21 * * ?" />  
+        <property name="cronExpression" value="0 1 21 * * ?" />
     </bean>
   
     <!-- 定义调度器 -->
